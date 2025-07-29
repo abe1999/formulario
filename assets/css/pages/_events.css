@@ -78,3 +78,19 @@
 .news-section .news-card .btn {
     align-self: flex-start; /* Alinha o botão à esquerda */
 }
+
+/* Adicione este trecho ao seu CSS */
+
+/* Garante que o link que envolve o card não altere a cor nem o sublinhado do texto */
+.news-card-link {
+    text-decoration: none;
+    color: inherit; /* Herda a cor do elemento pai */
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+}
+
+/* Garante que o botão 'Leia Mais' fique na base do card */
+.news-card-content .btn {
+    margin-top: auto;
+}

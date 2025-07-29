@@ -10,6 +10,8 @@
 @import url('./components/_header.css');
 @import url('./components/_hero.css');
 @import url('./components/_quick-links.css');
+@import url('./components/_latest-news.css');
+@import url('./components/_event-detail.css');
 /* Se você tiver componentes como botões, cards, etc. */
 
 /* 3. Layout Principal (Partials) */
@@ -19,4 +21,4 @@
 /* 4. Estilos Específicos de Páginas */
 /* Se a página de notícias tiver um estilo muito único, você pode criar um arquivo para ela */
 /* @import url('./pages/_news.css'); */
-@import url('./pages/_news.css');
+@import url('./pages/_events.css');

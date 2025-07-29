@@ -1,0 +1,110 @@
+[
+  {
+    "id": 6,
+    "image": "https://picsum.photos/id/48/800/600",
+    "date": "28 de Julho de 2025",
+    "title": "Inscrições Abertas para o Retiro de Casais",
+    "excerpt": "Um momento especial para fortalecer os laços matrimoniais à luz da fé. Vagas limitadas, garanta a sua participação!",
+    "link": "/pages/evento-detalhe.html?id=6",
+    "fullText": "<p>Estão abertas as inscrições para o nosso Retiro Anual de Casais, que acontecerá no próximo mês. Será um fim de semana de profunda reflexão, partilha e renovação dos votos matrimoniais. Convidamos todos os casais da nossa comunidade a participar.</p><p>As inscrições podem ser feitas na secretaria paroquial durante o horário comercial.</p>",
+    "galleryImages": [
+      "https://picsum.photos/id/101/800/600",
+      "https://picsum.photos/id/102/800/600",
+      "https://picsum.photos/id/103/800/600",
+      "https://picsum.photos/id/104/800/600",
+      "https://picsum.photos/id/105/800/600",
+      "https://picsum.photos/id/106/800/600"
+    ],
+    "driveLink": "https://drive.google.com/drive/folders/PASTA_RETIRO_CASAIS"
+  },
+  {
+    "id": 5,
+    "image": "https://picsum.photos/id/54/800/600",
+    "date": "25 de Julho de 2025",
+    "title": "Nossa Festa Julina foi um Sucesso de Arrecadação",
+    "excerpt": "Agradecemos a todos que participaram e ajudaram na nossa tradicional Festa Julina. Os fundos serão destinados às obras de caridade.",
+    "link": "/pages/evento-detalhe.html?id=5",
+    "fullText": "<p>Com grande alegria, anunciamos que nossa Festa Julina deste ano foi um verdadeiro sucesso! Graças à participação massiva da comunidade e ao trabalho incansável dos voluntários, conseguimos arrecadar um valor recorde que será integralmente revertido para as ações da Pastoral Social.</p><p>Confira as fotos deste dia de confraternização, comidas típicas e muita alegria.</p>",
+    "galleryImages": [
+      "https://picsum.photos/id/111/800/600",
+      "https://picsum.photos/id/112/800/600",
+      "https://picsum.photos/id/113/800/600",
+      "https://picsum.photos/id/114/800/600",
+      "https://picsum.photos/id/115/800/600",
+      "https://picsum.photos/id/116/800/600"
+    ],
+    "driveLink": "https://drive.google.com/drive/folders/PASTA_FESTA_JULINA"
+  },
+  {
+    "id": 4,
+    "image": "https://picsum.photos/id/61/800/600",
+    "date": "20 de Julho de 2025",
+    "title": "Formação para Novos Ministros da Eucaristia",
+    "excerpt": "No último sábado, realizamos um encontro de formação para os novos Ministros Extraordinários da Sagrada Comunhão.",
+    "link": "/pages/evento-detalhe.html?id=4",
+    "fullText": "<p>A formação de novos servos para o altar é sempre um momento de grande graça para nossa paróquia. No último sábado, um grupo de leigos dedicados participou do encontro de formação para se tornarem Ministros Extraordinários da Sagrada Comunhão, um serviço de imenso valor para a Igreja.</p>",
+    "galleryImages": [
+      "https://picsum.photos/id/121/800/600",
+      "https://picsum.photos/id/122/800/600",
+      "https://picsum.photos/id/123/800/600",
+      "https://picsum.photos/id/124/800/600",
+      "https://picsum.photos/id/125/800/600",
+      "https://picsum.photos/id/126/800/600"
+    ],
+    "driveLink": null
+  },
+  {
+    "id": 3,
+    "image": "https://picsum.photos/id/33/800/600",
+    "date": "15 de Julho de 2025",
+    "title": "Campanha do Agasalho Supera Expectativas",
+    "excerpt": "Com a sua ajuda, arrecadamos mais de mil peças de roupa que aquecerão o inverno de muitas famílias em nossa cidade.",
+    "link": "/pages/evento-detalhe.html?id=3",
+    "fullText": "<p>A generosidade de nossa comunidade falou mais alto mais uma vez! A Campanha do Agasalho de 2025 foi um sucesso, superando todas as nossas expectativas. As doações já foram triadas pelos voluntários e começarão a ser distribuídas nesta semana.</p><p>Agradecemos de coração a cada pessoa que contribuiu com esta causa tão nobre.</p>",
+    "galleryImages": [
+      "https://picsum.photos/id/131/800/600",
+      "https://picsum.photos/id/132/800/600",
+      "https://picsum.photos/id/133/800/600",
+      "https://picsum.photos/id/134/800/600",
+      "https://picsum.photos/id/135/800/600",
+      "https://picsum.photos/id/136/800/600"
+    ],
+    "driveLink": "https://drive.google.com/drive/folders/PASTA_CAMPANHA_AGASALHO"
+  },
+  {
+    "id": 2,
+    "image": "https://picsum.photos/id/22/800/600",
+    "date": "10 de Julho de 2025",
+    "title": "Grupo de Oração Jovem Convida Novos Membros",
+    "excerpt": "Todas as sextas-feiras, nosso grupo de jovens se reúne para um momento de louvor, oração e partilha. Venha participar!",
+    "link": "/pages/evento-detalhe.html?id=2",
+    "fullText": "<p>Se você é jovem e busca um espaço de amizade e aprofundamento na fé, nosso Grupo de Oração Jovem é o seu lugar! Os encontros acontecem toda sexta-feira, às 19h30, no salão paroquial. É um momento de muita música, alegria e intimidade com Deus. Traga um amigo e venha nos conhecer!</p>",
+    "galleryImages": [
+      "https://picsum.photos/id/141/800/600",
+      "https://picsum.photos/id/142/800/600",
+      "https://picsum.photos/id/143/800/600",
+      "https://picsum.photos/id/144/800/600",
+      "https://picsum.photos/id/145/800/600",
+      "https://picsum.photos/id/146/800/600"
+    ],
+    "driveLink": null
+  },
+  {
+    "id": 1,
+    "image": "https://picsum.photos/id/18/800/600",
+    "date": "05 de Julho de 2025",
+    "title": "Celebração de Batizados Comunitários Emociona Fiéis",
+    "excerpt": "Mais de 20 crianças receberam o sacramento do Batismo em uma bela cerimônia comunitária no último domingo.",
+    "link": "/pages/evento-detalhe.html?id=1",
+    "fullText": "<p>O último domingo foi de festa em nossa paróquia com a celebração do Batismo Comunitário. Mais de 20 crianças foram acolhidas na grande família de Cristo pelo sacramento do Batismo. A cerimônia, presidida por nosso pároco, foi um momento de grande emoção para pais, padrinhos e toda a comunidade presente.</p>",
+    "galleryImages": [
+      "https://picsum.photos/id/151/800/600",
+      "https://picsum.photos/id/152/800/600",
+      "https://picsum.photos/id/153/800/600",
+      "https://picsum.photos/id/154/800/600",
+      "https://picsum.photos/id/155/800/600",
+      "https://picsum.photos/id/156/800/600"
+    ],
+    "driveLink": "https://drive.google.com/drive/folders/PASTA_BATIZADOS"
+  }
+]
