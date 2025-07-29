@@ -1,0 +1,38 @@
+/* =================================================================
+ESTILOS DO RODAPÉ
+================================================================= */
+
+.main-footer {
+  background-color: #2c2c2c; /* Um cinza bem escuro, quase preto */
+  color: #a0a0a0; /* Um cinza claro para o texto, fácil de ler */
+  padding: 40px 0;
+  
+  /* Uma borda no topo com a nossa cor secundária para um detalhe elegante */
+  border-top: 3px solid var(--color-secondary); 
+}
+
+.main-footer .container {
+  /* Usando flexbox para alinhar o conteúdo, mesmo que seja simples por enquanto.
+     Isso facilita adicionar mais colunas no futuro. */
+  display: flex;
+  flex-direction: column; /* Empilha os itens verticalmente */
+  justify-content: center;
+  align-items: center;
+  gap: 8px; /* Espaço entre os parágrafos */
+}
+
+.main-footer p {
+  margin: 0; /* Remove a margem padrão do parágrafo */
+  font-size: 0.9rem; /* Texto do rodapé geralmente é um pouco menor */
+  text-align: center;
+}
+
+/* Podemos adicionar um link estilizado no futuro, se necessário */
+.main-footer a {
+  color: var(--color-white);
+  text-decoration: underline;
+}
+
+.main-footer a:hover {
+  text-decoration: none;
+}

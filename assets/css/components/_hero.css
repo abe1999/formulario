@@ -1,0 +1,69 @@
+/* =================================================================
+ESTILOS DA SEÇÃO HERO (BANNER PRINCIPAL)
+================================================================= */
+
+.hero-section {
+  /* Imagem de Fundo */
+  /* IMPORTANTE: Crie a pasta 'imagens' e coloque uma foto sua como 'banner-principal.jpg' */
+  background-image: url('../../img/image/banner.jpg');
+  background-color: var(--color-primary); /* Cor de fundo caso a imagem não carregue */
+  background-size: cover; /* Faz a imagem cobrir toda a área */
+  background-position: center; /* Centraliza a imagem */
+
+  padding: 120px 0; /* Espaçamento interno (vertical, horizontal) */
+  color: var(--color-white);
+  text-align: center;
+
+  /* Esses dois são para criar a sobreposição escura sobre a imagem */
+  position: relative;
+  z-index: 1;
+}
+
+/* Camada escura sobre a imagem para melhorar a legibilidade do texto */
+.hero-section::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(10, 66, 117, 0.6); /* Azul escuro com 60% de transparência */
+  z-index: -1; /* Coloca a camada entre o fundo e o conteúdo */
+}
+
+.hero-subtitle {
+  font-size: 1.2rem;
+  font-weight: 400;
+  letter-spacing: 1px;
+}
+
+.hero-title {
+  font-size: 3.5rem; /* Tamanho grande para o título principal */
+  font-family: var(--font-secondary); /* Usa a fonte com serifa para destaque */
+  margin: 10px 0;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5); /* Sombra no texto para destacar */
+}
+
+.hero-text {
+  font-size: 1.2rem;
+  max-width: 600px; /* Evita que a linha fique muito longa em telas grandes */
+  margin: 0 auto 30px auto; /* Centraliza o texto */
+}
+
+/* Estilo para o botão principal da seção hero */
+.btn-main {
+  background-color: var(--color-secondary); /* Fundo dourado */
+  color: var(--color-headings);
+  padding: 15px 35px;
+  font-size: 1.1rem;
+  font-weight: 700;
+  border-radius: 5px;
+  text-transform: uppercase;
+  transition: all 0.3s ease;
+}
+
+.btn-main:hover {
+  background-color: #e4c55a; /* Dourado um pouco mais claro no hover */
+  transform: scale(1.05); /* Aumenta um pouco o botão */
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+}

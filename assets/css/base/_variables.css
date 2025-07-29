@@ -1,0 +1,25 @@
+/* =================================================================
+VARIÁVEIS GLOBAIS
+Definição de cores, fontes e outros valores reutilizáveis.
+================================================================= */
+
+:root {
+  /* Cores Principais */
+  --color-primary: #0a4275;      /* Azul escuro e sóbrio */
+  --color-primary-dark: #07335b; /* Azul para hover de botões */
+  --color-secondary: #d4af37;    /* Dourado/Ocre para detalhes */
+
+  /* Cores de Texto */
+  --color-text: #333333;         /* Cor principal para parágrafos */
+  --color-text-light: #555555;   /* Cor de texto mais suave */
+  --color-headings: #1c1c1c;     /* Cor para títulos (quase preto) */
+
+  /* Cores Neutras */
+  --color-white: #ffffff;
+  --color-light-gray: #f4f4f4;  /* Para fundos de seção */
+  --color-border: #dddddd;      /* Para bordas sutis */
+
+  /* Fontes */
+  --font-primary: 'Roboto', sans-serif; /* Uma fonte limpa para o corpo */
+  --font-secondary: 'Merriweather', serif; /* Uma fonte com serifa para títulos */
+}

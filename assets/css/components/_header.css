@@ -1,0 +1,100 @@
+/* =================================================================
+ESTILOS DO CABEÇALHO (VERSÃO SIMPLIFICADA)
+================================================================= */
+
+/* --- Cabeçalho Principal --- */
+.main-header {
+  background-color: var(--color-white);
+  padding: 15px 0;
+  border-bottom: 1px solid var(--color-border);
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+}
+
+.main-header .container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 20px; /* Adiciona um espaço geral entre os elementos */
+}
+
+.main-header .logo img {
+  height: 60px;
+  width: auto;
+}
+
+/* --- Navegação Principal --- */
+.main-nav {
+  /* Adicionado para garantir que o menu cresça e empurre os itens da direita */
+  flex-grow: 1; 
+}
+
+.main-nav ul {
+  display: flex;
+  justify-content: center; /* Centraliza o menu no espaço disponível */
+  align-items: center;
+  gap: 30px; /* Espaçamento entre os itens do menu */
+}
+
+.main-nav ul li a {
+  font-family: var(--font-primary);
+  font-size: 16px;
+  font-weight: 700;
+  text-transform: uppercase;
+  color: var(--color-text-light);
+  padding: 10px 0;
+  position: relative;
+  transition: color 0.3s ease;
+}
+
+.main-nav ul li a:hover {
+  color: var(--color-primary);
+}
+
+.main-nav ul li a::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background-color: var(--color-secondary);
+  transition: width 0.3s ease;
+}
+
+.main-nav ul li a:hover::after {
+  width: 100%;
+}
+
+/* --- Itens da Direita (Redes Sociais e Busca) --- */
+.header-right {
+  display: flex;
+  align-items: center;
+  gap: 25px; /* Espaço entre as redes sociais e a busca */
+}
+
+.social-media {
+    display: flex;
+    gap: 18px; /* Espaço entre cada ícone social */
+}
+
+.social-media a {
+    font-size: 18px;
+    color: var(--color-text-light); /* Cor nova para fundo claro */
+    transition: color 0.3s ease, transform 0.3s ease;
+}
+
+.social-media a:hover {
+    color: var(--color-primary); /* Cor nova no hover */
+    transform: scale(1.1);
+}
+
+.search-icon {
+  font-size: 20px;
+  color: var(--color-text-light);
+  cursor: pointer;
+  transition: color 0.3s ease;
+}
+
+.search-icon:hover {
+  color: var(--color-primary);
+}
