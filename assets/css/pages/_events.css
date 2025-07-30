@@ -1,96 +1,137 @@
-
 /* ==========================================================================
-   Página de Notícias
+   Página de Eventos (Versão Refinada)
    ========================================================================== */
 
-.news-section {
-    padding: 60px 0;
-    background-color: #f9f9f9; /* Um fundo suave para a seção */
+/* 1. VARIÁVEIS DE COR E FONTE: Mude aqui para alterar o site inteiro */
+:root {
+  --cor-fundo: #f8f9fa;
+  --cor-card: #ffffff;
+  --cor-texto: #555;
+  --cor-titulo-card: #333;
+  --cor-destaque: #b0914f; /* Um dourado sóbrio, ideal para a temática */
+  --cor-sombra: rgba(0, 0, 0, 0.08);
+
+  --fonte-principal: "Roboto", sans-serif;
+  --fonte-titulo: "Merriweather", serif;
 }
 
-.news-section .section-title {
-    text-align: center;
-    font-family: 'Merriweather', serif;
-    font-size: 2.5rem;
-    margin-bottom: 40px;
-    color: #333;
+/* 2. ESTILOS GERAIS */
+body {
+  background-color: var(--cor-fundo);
+  font-family: var(--fonte-principal);
+  color: var(--cor-texto);
 }
 
-.news-section .news-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-    gap: 30px;
+.eventos-section {
+  /* Renomeado para 'eventos' para maior clareza */
+  padding: 60px 0;
 }
 
-.news-section .news-card {
-    background-color: #fff;
-    border-radius: 8px;
-    box-shadow: 0 4px 12px rgba(0,0,0,0.08);
-    overflow: hidden; /* Garante que a imagem não ultrapasse as bordas arredondadas */
-    display: flex;
-    flex-direction: column;
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
+.section-title {
+  font-family: var(--fonte-titulo);
+  font-size: 2.5rem;
+  color: var(--cor-titulo-card);
+  text-align: center;
+  margin-bottom: 50px;
+  position: relative;
+  padding-bottom: 15px;
 }
 
-.news-section .news-card:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 8px 20px rgba(0,0,0,0.12);
+/* Linha decorativa abaixo do título da seção */
+.section-title::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 70px;
+  height: 3px;
+  background-color: var(--cor-destaque);
+  border-radius: 2px;
 }
 
-.news-section .news-card img {
-    width: 100%;
-    height: 220px;
-    object-fit: cover; /* Garante que a imagem cubra a área sem distorcer */
+/* 3. GRID E CARDS DE EVENTOS */
+.eventos-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 35px; /* Levemente aumentado para mais respiro */
 }
 
-.news-section .news-card-content {
-    padding: 25px;
-    display: flex;
-    flex-direction: column;
-    flex-grow: 1; /* Faz o conteúdo crescer para ocupar o espaço */
+/* O link agora funciona como o card */
+.evento-card {
+  display: flex; /* Permite que o link interno preencha 100% */
+  flex-direction: column;
+  height: 100%;
+  background-color: var(--cor-card);
+  border-radius: 8px;
+  box-shadow: 0 4px 12px var(--cor-sombra);
+  text-decoration: none; /* Remove sublinhado do link */
+  overflow: hidden;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
-.news-section .news-date {
-    font-size: 0.85rem;
-    color: #888;
-    margin-bottom: 10px;
-    font-family: 'Roboto', sans-serif;
+.evento-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.12);
 }
 
-.news-section .news-title {
-    font-family: 'Merriweather', serif;
-    font-size: 1.4rem;
-    margin-top: 0;
-    margin-bottom: 15px;
-    color: #333;
-    line-height: 1.3;
+/* Efeito de destaque no título ao passar o mouse no card */
+.evento-card:hover .evento-titulo {
+  color: var(--cor-destaque);
 }
 
-.news-section .news-excerpt {
-    font-family: 'Roboto', sans-serif;
-    color: #555;
-    line-height: 1.6;
-    flex-grow: 1; /* Empurra o botão para o final do card */
-    margin-bottom: 20px;
+.evento-card img {
+  width: 100%;
+  height: 220px;
+  object-fit: cover;
 }
 
-/* Reutilizando o estilo do botão principal */
-.news-section .news-card .btn {
-    align-self: flex-start; /* Alinha o botão à esquerda */
+/* 4. CONTEÚDO INTERNO DO CARD */
+.evento-conteudo {
+  padding: 25px;
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1; /* Essencial para o botão ficar no rodapé */
 }
 
-/* Adicione este trecho ao seu CSS */
-
-/* Garante que o link que envolve o card não altere a cor nem o sublinhado do texto */
-.news-card-link {
-    text-decoration: none;
-    color: inherit; /* Herda a cor do elemento pai */
-    display: flex;
-    flex-direction: column;
-    height: 100%;
+.evento-data {
+  font-size: 0.8rem;
+  font-weight: 700;
+  color: #999;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  margin-bottom: 12px;
 }
 
-/* Garante que o botão 'Leia Mais' fique na base do card */
-.news-card-content .btn {
-    margin-top: auto;
+.evento-titulo {
+  font-family: var(--fonte-titulo);
+  font-size: 1.4rem;
+  line-height: 1.4;
+  color: var(--cor-titulo-card);
+  margin: 0 0 15px 0;
+  transition: color 0.3s ease; /* Transição suave da cor do título */
+}
+
+.evento-resumo {
+  line-height: 1.7;
+  flex-grow: 1; /* Empurra o botão para baixo */
+}
+
+/* Botão "Ver Mais" estilizado */
+.evento-card .btn {
+  margin-top: 20px; /* Espaço entre o resumo e o botão */
+  align-self: flex-start; /* Alinha na esquerda */
+  background-color: var(--cor-destaque);
+  color: #fff;
+  padding: 10px 22px;
+  border-radius: 5px;
+  text-transform: uppercase;
+  font-size: 0.8rem;
+  font-weight: 700;
+  letter-spacing: 0.5px;
+  transition: background-color 0.3s ease;
+}
+
+.evento-card:hover .btn {
+  background-color: #9a7d42; /* Dourado um pouco mais escuro no hover */
 }

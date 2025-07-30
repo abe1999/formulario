@@ -1,72 +1,98 @@
-document.addEventListener("DOMContentLoaded", function() {
+document.addEventListener("DOMContentLoaded", function () {
+  const homeNewsContainer = document.getElementById("latest-news-grid");
 
-    const homeNewsContainer = document.getElementById("latest-news-grid");
-    const newsPageContainer = document.querySelector("#all-news-page .news-grid");
+  // ----- A CORREÇÃO ESTÁ AQUI NESTA LINHA -----
+  // Simplificamos o seletor para encontrar o container da lista de eventos.
+  const eventosPageContainer = document.querySelector(".eventos-grid");
 
-    /**
-     * Cria o HTML para o card COMPLETO (usado na página /pages/noticias.html).
-     */
-    function createFullNewsCard(newsItem) {
-        return `
-            <article class="news-card">
-                <a href="${newsItem.link}" class="news-card-link">
-                    <img src="${newsItem.image}" alt="Imagem da notícia: ${newsItem.title}">
-                    <div class="news-card-content">
-                        <p class="news-date">${newsItem.date}</p>
-                        <h2 class="news-title">${newsItem.title}</h2>
-                        <p class="news-excerpt">${newsItem.excerpt}</p>
-                        <span class="btn">Leia Mais</span>
-                    </div>
-                </a>
-            </article>
-        `;
+  function formatarData(dateString) {
+    const data = new Date(dateString + "T00:00:00");
+    return data.toLocaleDateString("pt-BR", {
+      day: "2-digit",
+      month: "long",
+      year: "numeric",
+    });
+  }
+
+  function createFullEventCard(evento) {
+    return `
+      <a href="${evento.link}" class="evento-card">
+        <img src="${evento.image}" alt="Imagem do evento: ${evento.title}">
+        <div class="evento-conteudo">
+          <p class="evento-data">${formatarData(evento.date)}</p>
+          <h3 class="evento-titulo">${evento.title}</h3>
+          <p class="evento-resumo">${evento.excerpt}</p>
+          <span class="btn">Ver Mais</span>
+        </div>
+      </a>
+    `;
+  }
+
+  function createHomeEventCard(evento) {
+    return `
+      <article class="evento-card-compacto">
+        <a href="${evento.link}">
+          <img src="${evento.image}" alt="Imagem do evento: ${evento.title}">
+          <div class="evento-compacto-conteudo">
+            <p class="evento-compacto-data">${formatarData(evento.date)}</p>
+            <h3 class="evento-compacto-titulo">${evento.title}</h3>
+          </div>
+        </a>
+      </article>
+    `;
+  }
+
+  async function fetchAndDisplayEvents() {
+    // Se nenhum dos containers (home ou página de eventos) existir, não faz nada.
+    if (!homeNewsContainer && !eventosPageContainer) {
+      return;
     }
 
-    /**
-     * Cria o HTML para o card COMPACTO (usado na página inicial).
-     * Este card contém apenas imagem, data e título.
-     */
-    function createHomeNewsCard(newsItem) {
-        return `
-            <article class="home-news-card">
-                <a href="${newsItem.link}">
-                    <img src="${newsItem.image}" alt="Imagem da notícia: ${newsItem.title}">
-                    <div class="home-news-content">
-                        <p class="home-news-date">${newsItem.date}</p>
-                        <h3 class="home-news-title">${newsItem.title}</h3>
-                    </div>
-                </a>
-            </article>
-        `;
-    }
+    try {
+      const params = new URLSearchParams(window.location.search);
+      const category = params.get("category");
 
-    /**
-     * Busca os dados do JSON e exibe as notícias no local correto.
-     */
-    async function fetchAndDisplayNews() {
-        try {
-            const response = await fetch('/data/eventos.json');
-            if (!response.ok) throw new Error(`Erro na rede: ${response.statusText}`);
-            const allNews = await response.json();
+      const response = await fetch("/data/eventos.json");
+      if (!response.ok) throw new Error(`Erro na rede: ${response.statusText}`);
 
-            // Se estiver na HOME, usa o card compacto.
-            if (homeNewsContainer) {
-                const latestNews = allNews.slice(0, 3);
-                homeNewsContainer.innerHTML = latestNews.map(createHomeNewsCard).join('');
-            }
+      let allEvents = await response.json();
 
-            // Se estiver na PÁGINA DE NOTÍCIAS, usa o card completo.
-            if (newsPageContainer) {
-                newsPageContainer.innerHTML = allNews.map(createFullNewsCard).join('');
-            }
-
-        } catch (error) {
-            console.error('Falha ao carregar notícias:', error);
-            const errorMessage = '<p>Não foi possível carregar as notícias.</p>';
-            if (homeNewsContainer) homeNewsContainer.innerHTML = errorMessage;
-            if (newsPageContainer) newsPageContainer.innerHTML = errorMessage;
+      if (category) {
+        allEvents = allEvents.filter((evento) => evento.category === category);
+        const pageTitleElement = document.querySelector(".page-title");
+        if (pageTitleElement) {
+          pageTitleElement.textContent = `Eventos: ${
+            category.charAt(0).toUpperCase() + category.slice(1)
+          }s`;
         }
-    }
+      }
 
-    fetchAndDisplayNews();
+      allEvents.sort((a, b) => new Date(b.date) - new Date(a.date));
+
+      if (homeNewsContainer) {
+        const latestEvents = allEvents.slice(0, 3);
+        homeNewsContainer.innerHTML = latestEvents
+          .map(createHomeEventCard)
+          .join("");
+      }
+
+      if (eventosPageContainer) {
+        if (allEvents.length === 0) {
+          eventosPageContainer.innerHTML = `<p class="text-center" style="grid-column: 1 / -1;">Não há eventos nesta categoria no momento.</p>`;
+        } else {
+          eventosPageContainer.innerHTML = allEvents
+            .map(createFullEventCard)
+            .join("");
+        }
+      }
+    } catch (error) {
+      console.error("Falha ao carregar eventos:", error);
+      const errorMessage =
+        "<p>Não foi possível carregar os eventos no momento.</p>";
+      if (homeNewsContainer) homeNewsContainer.innerHTML = errorMessage;
+      if (eventosPageContainer) eventosPageContainer.innerHTML = errorMessage;
+    }
+  }
+
+  fetchAndDisplayEvents();
 });

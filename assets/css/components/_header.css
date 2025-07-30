@@ -25,7 +25,7 @@ ESTILOS DO CABEÇALHO (VERSÃO SIMPLIFICADA)
 /* --- Navegação Principal --- */
 .main-nav {
   /* Adicionado para garantir que o menu cresça e empurre os itens da direita */
-  flex-grow: 1; 
+  flex-grow: 1;
 }
 
 .main-nav ul {
@@ -51,7 +51,7 @@ ESTILOS DO CABEÇALHO (VERSÃO SIMPLIFICADA)
 }
 
 .main-nav ul li a::after {
-  content: '';
+  content: "";
   position: absolute;
   bottom: 0;
   left: 0;
@@ -73,19 +73,19 @@ ESTILOS DO CABEÇALHO (VERSÃO SIMPLIFICADA)
 }
 
 .social-media {
-    display: flex;
-    gap: 18px; /* Espaço entre cada ícone social */
+  display: flex;
+  gap: 18px; /* Espaço entre cada ícone social */
 }
 
 .social-media a {
-    font-size: 18px;
-    color: var(--color-text-light); /* Cor nova para fundo claro */
-    transition: color 0.3s ease, transform 0.3s ease;
+  font-size: 18px;
+  color: var(--color-text-light); /* Cor nova para fundo claro */
+  transition: color 0.3s ease, transform 0.3s ease;
 }
 
 .social-media a:hover {
-    color: var(--color-primary); /* Cor nova no hover */
-    transform: scale(1.1);
+  color: var(--color-primary); /* Cor nova no hover */
+  transform: scale(1.1);
 }
 
 .search-icon {
@@ -97,4 +97,69 @@ ESTILOS DO CABEÇALHO (VERSÃO SIMPLIFICADA)
 
 .search-icon:hover {
   color: var(--color-primary);
+}
+
+/* =================================================================
+   ESTILOS DO MENU DROPDOWN
+================================================================= */
+
+/* Define o item da lista como o contêiner do dropdown.
+   Usa o mesmo 'display' que os outros 'li' dentro do flex container. */
+.main-nav .dropdown {
+  position: relative;
+}
+
+/* O conteúdo do dropdown (a caixa que desce) */
+.dropdown-content {
+  display: none; /* Escondido por padrão */
+  position: absolute; /* Posicionado em relação ao .dropdown */
+  top: 100%; /* Aparece logo abaixo do item principal do menu */
+  left: 0;
+  background-color: var(--color-white);
+  min-width: 200px; /* Largura mínima do dropdown */
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Sombra similar à do header */
+  border: 1px solid var(--color-border);
+  border-radius: 0 0 8px 8px; /* Cantos arredondados apenas na parte de baixo */
+  z-index: 1000; /* Garante que o dropdown fique sobre todos os outros elementos */
+  overflow: hidden; /* Garante que os cantos arredondados funcionem */
+}
+
+/* Links individuais dentro do dropdown */
+.dropdown-content a {
+  /* Reseta os estilos herdados do menu principal para um visual de lista */
+  font-size: 15px;
+  font-weight: 500;
+  text-transform: none; /* Texto normal, não maiúsculo */
+  color: var(--color-text-light);
+  padding: 12px 20px;
+  display: block; /* Faz o link ocupar todo o espaço */
+  transition: all 0.3s ease;
+}
+
+/* Remove a animação da linha de baixo nos links do dropdown */
+.dropdown-content a::after {
+  display: none;
+}
+
+/* Efeito ao passar o mouse nos links do dropdown */
+.dropdown-content a:hover {
+  background-color: var(--color-primary); /* Usa sua cor primária no fundo */
+  color: var(--color-white); /* Texto fica branco */
+}
+
+/* A Mágica: Mostra o dropdown quando o mouse está sobre o .dropdown */
+.dropdown:hover .dropdown-content {
+  display: block;
+}
+
+/* Estilo para a setinha para baixo */
+.drop-btn .fa-caret-down {
+  margin-left: 6px;
+  font-size: 0.8em;
+  transition: transform 0.3s ease;
+}
+
+/* Gira a setinha quando o menu está aberto (hover) */
+.dropdown:hover .drop-btn .fa-caret-down {
+  transform: rotate(180deg);
 }

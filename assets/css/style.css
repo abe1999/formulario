@@ -1,24 +1,25 @@
 /* ARQUIVO: style.css */
 
 /* 1. Base e Configurações */
-@import url('./base/_reset.css');
-@import url('./base/_variables.css');
-@import url('./base/_typography.css');
+@import url("./base/_reset.css");
+@import url("./base/_variables.css");
+@import url("./base/_typography.css");
 
 /* 2. Componentes Reutilizáveis */
-@import url('./components/_footer.css');
-@import url('./components/_header.css');
-@import url('./components/_hero.css');
-@import url('./components/_quick-links.css');
-@import url('./components/_latest-news.css');
-@import url('./components/_event-detail.css');
+@import url("./components/_footer.css");
+@import url("./components/_header.css");
+@import url("./components/_hero.css");
+@import url("./components/_quick-links.css");
+@import url("./components/_latest-news.css");
+@import url("./components/_event-detail.css");
 /* Se você tiver componentes como botões, cards, etc. */
 
 /* 3. Layout Principal (Partials) */
-@import url('./partials/_header.css');
-@import url('./partials/_footer.css');
+@import url("./partials/_header.css");
+@import url("./partials/_footer.css");
 
 /* 4. Estilos Específicos de Páginas */
 /* Se a página de notícias tiver um estilo muito único, você pode criar um arquivo para ela */
 /* @import url('./pages/_news.css'); */
-@import url('./pages/_events.css');
+@import url("./pages/_events.css");
+@import url("/assets/css/pages/pastorais.css");
