@@ -9,6 +9,8 @@ body {
   line-height: 1.6;
   color: var(--color-text);
   background-color: var(--color-white);
+   /* LINHA ADICIONADA AQUI */
+  padding-top: 91px;
 }
 
 h1, h2, h3, h4, h5, h6 {

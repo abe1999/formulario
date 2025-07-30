@@ -5,9 +5,17 @@ ESTILOS DO CABEÇALHO (VERSÃO SIMPLIFICADA)
 /* --- Cabeçalho Principal --- */
 .main-header {
   background-color: var(--color-white);
-  padding: 15px 0;
+  padding: 15px 0; /* Este será o padding do estado GRANDE */
   border-bottom: 1px solid var(--color-border);
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+
+  /* LINHAS ADICIONADAS */
+  position: fixed; /* Fixa o header no topo da tela */
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 1000; /* Garante que ele fique sobre todo o conteúdo */
+  transition: padding 0.4s ease-in-out; /* Animação suave para o padding */
 }
 
 .main-header .container {
@@ -20,6 +28,9 @@ ESTILOS DO CABEÇALHO (VERSÃO SIMPLIFICADA)
 .main-header .logo img {
   height: 60px;
   width: auto;
+
+  /* LINHA ADICIONADA */
+  transition: height 0.4s ease-in-out; /* Animação suave para a altura */
 }
 
 /* --- Navegação Principal --- */
@@ -162,4 +173,19 @@ ESTILOS DO CABEÇALHO (VERSÃO SIMPLIFICADA)
 /* Gira a setinha quando o menu está aberto (hover) */
 .dropdown:hover .drop-btn .fa-caret-down {
   transform: rotate(180deg);
+}
+
+/* =================================================================
+   ESTADO DO CABEÇALHO AO ROLAR A PÁGINA (SCROLLED)
+================================================================= */
+
+/* Quando o header tiver a classe .scrolled, o padding diminui */
+.main-header.scrolled {
+  padding: 5px 0;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Sombra um pouco mais forte */
+}
+
+/* Quando o header tiver a classe .scrolled, a altura do logo diminui */
+.main-header.scrolled .logo img {
+  height: 45px; /* Nova altura do logo (menor) */
 }
