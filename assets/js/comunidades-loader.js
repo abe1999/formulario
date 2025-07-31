@@ -40,7 +40,7 @@ document.addEventListener("DOMContentLoaded", () => {
       comunidades.forEach((comunidade) => {
         cardsHTML += `
                     <div class="comunidade-card">
-                        <img src=".${comunidade.imagemCard}" alt="Fachada da ${comunidade.nome}">
+                        <img src="${comunidade.imagemCard}" alt="Fachada da ${comunidade.nome}">
                         <div class="card-content">
                             <h3>${comunidade.nome}</h3>
                             <p>${comunidade.resumo}</p>
