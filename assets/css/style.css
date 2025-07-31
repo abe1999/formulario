@@ -12,6 +12,7 @@
 @import url("./components/_quick-links.css");
 @import url("./components/_latest-news.css");
 @import url("./components/_event-detail.css");
+@import url("./components/_comunidade-detalhe.css");
 /* Se você tiver componentes como botões, cards, etc. */
 
 /* 3. Layout Principal (Partials) */
@@ -23,3 +24,4 @@
 /* @import url('./pages/_news.css'); */
 @import url("./pages/_events.css");
 @import url("/assets/css/pages/pastorais.css");
+@import url("/assets/css/pages/_comunidades.css");

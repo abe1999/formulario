@@ -61,40 +61,6 @@
   margin-bottom: 20px;
 }
 
-/* --- Acesso Rápido --- */
-.footer-quick-access {
-  text-align: center;
-  padding-bottom: 40px;
-}
-
-.footer-quick-access h4 {
-  font-family: var(--font-primary);
-  font-size: 16px;
-  font-weight: 700;
-  text-transform: uppercase;
-  color: var(--color-text-light);
-  margin-bottom: 25px;
-}
-
-.quick-access-logos {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-wrap: wrap;
-  gap: 40px; /* Espaço entre os logos */
-}
-
-.quick-access-logos img {
-  max-height: 45px;
-  opacity: 0.8;
-  transition: opacity 0.3s ease, transform 0.3s ease;
-}
-
-.quick-access-logos a:hover img {
-  opacity: 1;
-  transform: scale(1.1);
-}
-
 /* --- Barra Inferior --- */
 .footer-bottom-bar {
   background-color: #e9ecef; /* Um cinza um pouco mais escuro que o fundo */
@@ -111,10 +77,10 @@
 }
 
 .footer-bottom-bar a {
-    font-weight: bold;
-    color: var(--color-primary);
+  font-weight: bold;
+  color: var(--color-primary);
 }
 
 .footer-bottom-bar .fa-heart {
-    color: #e74c3c;
+  color: #e74c3c;
 }
