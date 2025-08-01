@@ -1,0 +1,296 @@
+/* =================================================== */
+/* ============ ESTILOS DO HERO COM VÍDEO ============ */
+/* =================================================== */
+.hero-video {
+  position: relative;
+  height: 100vh; /* Ocupa 100% da altura da tela */
+  width: 100%;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  color: #fff;
+}
+
+.hero-video__video {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  /* A mágica está aqui: */
+  object-fit: cover; /* Cobre toda a área sem distorcer, cortando o excesso */
+  z-index: 1;
+}
+
+.hero-video__overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5); /* Cor preta com 50% de transparência */
+  z-index: 2; /* Fica entre o vídeo e o texto */
+}
+
+.hero-video__content {
+  position: relative;
+  z-index: 3; /* Fica na frente de tudo */
+  max-width: 800px;
+  padding: 20px;
+}
+
+.hero-video__content h1 {
+  font-size: 3.5rem;
+  font-weight: 700;
+  margin-bottom: 20px;
+  text-shadow: 2px 2px 10px rgba(0, 0, 0, 0.7);
+}
+
+.hero-video__content p {
+  font-size: 1.4rem;
+  line-height: 1.6;
+  text-shadow: 1px 1px 5px rgba(0, 0, 0, 0.7);
+}
+
+.scroll-down-arrow {
+  position: absolute;
+  bottom: 40px;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 3;
+  color: #fff;
+  font-size: 2rem;
+  animation: bounce 2s infinite; /* Animação de "pulo" */
+}
+
+/* Animação para a seta */
+@keyframes bounce {
+  0%,
+  20%,
+  50%,
+  80%,
+  100% {
+    transform: translate(-50%, 0);
+  }
+  40% {
+    transform: translate(-50%, -20px);
+  }
+  60% {
+    transform: translate(-50%, -10px);
+  }
+}
+
+/* Estilos para a página de Acampamento */
+
+#nossos-acampamentos {
+  padding: 80px 0;
+  background-color: #f8f9fa; /* Um fundo suave para destacar os blocos */
+  position: relative;
+}
+
+/* Divisor de seção curvo */
+#nossos-acampamentos::before {
+  content: "";
+  position: absolute;
+  top: -50px; /* Puxa o divisor para cima, sobrepondo o vídeo */
+  left: 0;
+  width: 100%;
+  height: 100px;
+  background-color: #f8f9fa; /* Mesma cor do fundo da seção */
+  border-radius: 100% 100% 0 0; /* Mágica que cria a curva */
+}
+
+/* Precisamos garantir que o conteúdo da seção fique na frente do divisor */
+#nossos-acampamentos .container {
+  position: relative;
+  z-index: 2;
+}
+
+.section-title {
+  text-align: center;
+  margin-bottom: 60px;
+}
+
+.section-title h2 {
+  font-size: 2.5rem;
+  color: var(--color-primary);
+  margin-bottom: 10px;
+}
+
+.section-title p {
+  font-size: 1.1rem;
+  color: var(--color-text-light);
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.acampamento-item {
+  display: flex;
+  flex-wrap: wrap; /* Para quebrar em telas menores */
+  gap: 40px;
+  background-color: #fff;
+  padding: 40px;
+  border-radius: 12px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+  margin-bottom: 60px;
+  align-items: center;
+}
+
+/* A MÁGICA DA ALTERNÂNCIA: Inverte a ordem das colunas para cada item par */
+.acampamento-item:nth-child(even) {
+  flex-direction: row-reverse;
+}
+
+.acampamento-info,
+.acampamento-media {
+  flex: 1;
+  min-width: 350px; /* Largura mínima antes de quebrar */
+}
+
+.acampamento-info h3 {
+  font-size: 2rem;
+  color: var(--color-secondary, #333);
+  margin-top: 0;
+  margin-bottom: 15px;
+}
+
+.acampamento-info .descricao {
+  font-size: 1.1rem;
+  line-height: 1.7;
+  margin-bottom: 30px;
+}
+
+.acampamento-detalhes {
+  list-style: none;
+  padding: 0;
+  margin-bottom: 30px;
+}
+
+.acampamento-detalhes li {
+  display: flex;
+  align-items: center;
+  margin-bottom: 15px;
+  font-size: 1.1rem;
+}
+
+.acampamento-detalhes .fa-solid {
+  font-size: 1.5rem;
+  color: var(--color-primary);
+  margin-right: 15px;
+  width: 30px;
+  text-align: center;
+}
+
+.fotos-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 15px;
+  margin-bottom: 30px;
+}
+
+.fotos-grid img {
+  width: 100%;
+  border-radius: 8px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+
+.video-depoimento h4 {
+  font-size: 1.2rem;
+  margin-bottom: 15px;
+  color: var(--color-text-light);
+}
+
+.video-depoimento iframe {
+  width: 100%;
+  height: 250px;
+  border-radius: 8px;
+}
+
+/* Estilos para o menu de âncora dos acampamentos */
+.acampamento-nav {
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+  margin-top: 20px;
+  flex-wrap: wrap; /* Garante que quebre a linha em telas pequenas */
+}
+
+.acampamento-nav a {
+  text-decoration: none;
+  padding: 10px 20px;
+  border-radius: 50px; /* Botões arredondados */
+  background-color: #e9ecef; /* Um cinza claro */
+  color: var(--color-text-light);
+  font-weight: 600;
+  transition: all 0.3s ease;
+  border: 2px solid transparent;
+}
+
+.acampamento-nav a:hover {
+  background-color: var(--color-primary);
+  color: #fff;
+  transform: translateY(-2px); /* Efeito de levantar o botão */
+}
+
+/* ============================================== */
+/* ==== TEMAS DE CORES PARA OS ACAMPAMENTOS ==== */
+/* ============================================== */
+
+/* Base para o título com ícone */
+.acampamento-titulo {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  margin-bottom: 15px;
+}
+
+.acampamento-titulo i {
+  font-size: 2rem;
+  /* Adiciona um fundo para o ícone se destacar */
+  background-color: #f8f9fa;
+  padding: 10px;
+  border-radius: 50%;
+  width: 50px;
+  height: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.acampamento-titulo h3 {
+  margin: 0; /* Remove a margem padrão do h3 */
+}
+
+/* SÊNIOR = DOURADO */
+.acampamento-item.cor-senior {
+  border-top: 5px solid #ffd700;
+}
+.acampamento-item.cor-senior .acampamento-titulo {
+  color: #daa520;
+}
+
+/* JUVENIL = AZUL */
+.acampamento-item.cor-juvenil {
+  border-top: 5px solid #3498db;
+}
+.acampamento-item.cor-juvenil .acampamento-titulo {
+  color: #2980b9;
+}
+
+/* CASAIS = VERMELHO */
+.acampamento-item.cor-casais {
+  border-top: 5px solid #e74c3c;
+}
+.acampamento-item.cor-casais .acampamento-titulo {
+  color: #c0392b;
+}
+
+/* MIRIM = COLORIDO (usaremos um Laranja vibrante) */
+.acampamento-item.cor-mirim {
+  border-top: 5px solid #f39c12;
+}
+.acampamento-item.cor-mirim .acampamento-titulo {
+  color: #e67e22;
+}
