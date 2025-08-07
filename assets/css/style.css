@@ -1,28 +1,28 @@
-/* ARQUIVO: style.css */
+/* =================================================================
+   ARQUIVO CSS PRINCIPAL (style.css)
+   Importa todos os outros arquivos de estilo na ordem correta.
+================================================================= */
 
-/* 1. Base e Configurações */
+/* 1. Base e Configurações Globais */
 @import url("./base/_reset.css");
 @import url("./base/_variables.css");
 @import url("./base/_typography.css");
 
-/* 2. Componentes Reutilizáveis */
-@import url("./components/_footer.css");
+/* 2. Componentes Reutilizáveis (o coração do seu design) */
 @import url("./components/_header.css");
-@import url("./components/_hero.css");
+@import url("./components/_footer.css");
+@import url("./components/_hero-carousel.css"); /* Adicionado para o carrossel */
 @import url("./components/_quick-links.css");
 @import url("./components/_latest-news.css");
-@import url("./components/_event-detail.css");
-@import url("./components/_comunidade-detalhe.css");
-/* Se você tiver componentes como botões, cards, etc. */
+/* Removi componentes que não tínhamos criado para manter limpo */
 
-/* 3. Layout Principal (Partials) */
-@import url("./partials/_header.css");
-@import url("./partials/_footer.css");
-
-/* 4. Estilos Específicos de Páginas */
-/* Se a página de notícias tiver um estilo muito único, você pode criar um arquivo para ela */
-/* @import url('./pages/_news.css'); */
+/* 3. Estilos Específicos de Páginas */
 @import url("./pages/_events.css");
-@import url("/assets/css/pages/pastorais.css");
-@import url("/assets/css/pages/_comunidades.css");
-@import url("/assets/css/pages/_acampamento.css");
+@import url("./pages/_pastorais.css"); /* Padronizado o nome com underscore */
+@import url("./pages/_comunidades.css");
+@import url("./pages/_comunidade-detalhe.css");
+@import url("./pages/_acampamento.css");
+
+/* REMOVIDO: A seção "Layout Principal (Partials)" foi removida 
+   porque estava importando arquivos HTML da pasta errada.
+*/

@@ -1,69 +1,95 @@
-/* =================================================================
-ESTILOS DA SEÇÃO HERO (BANNER PRINCIPAL)
-================================================================= */
+/* Estilos para o Hero Carousel */
 
-.hero-section {
-  /* Imagem de Fundo */
-  /* IMPORTANTE: Crie a pasta 'imagens' e coloque uma foto sua como 'banner-principal.jpg' */
-  background-image: url('../../img/image/banner.jpg');
-  background-color: var(--color-primary); /* Cor de fundo caso a imagem não carregue */
-  background-size: cover; /* Faz a imagem cobrir toda a área */
-  background-position: center; /* Centraliza a imagem */
-
-  padding: 120px 0; /* Espaçamento interno (vertical, horizontal) */
-  color: var(--color-white);
-  text-align: center;
-
-  /* Esses dois são para criar a sobreposição escura sobre a imagem */
-  position: relative;
-  z-index: 1;
+.hero-carousel {
+  width: 100%;
+  height: 85vh; /* Ocupa 85% da altura da tela */
+  min-height: 500px;
+  position: relative; /* Essencial para o Swiper funcionar bem */
 }
 
-/* Camada escura sobre a imagem para melhorar a legibilidade do texto */
-.hero-section::before {
-  content: '';
+.hero-carousel .swiper,
+.hero-carousel .swiper-wrapper,
+.hero-carousel .swiper-slide {
+  width: 100%;
+  height: 100%; /* Garante que todos os elementos ocupem a altura total */
+}
+
+.swiper-slide {
+  background-size: cover;
+  background-position: center;
+  position: relative;
+  color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+
+/* === AQUI ADICIONAMOS SUAS IMAGENS LOCAIS === */
+/* O caminho '../' sobe um nível (de 'components' para 'css'), o segundo sobe para 'assets', e então desce para 'img' */
+
+/* Slide 1 */
+.swiper-slide:nth-child(1) {
+  background-image: url("../img/image/banner.jpg");
+}
+
+/* Slide 2 (Estou assumindo que você tem um banner2.jpg, ajuste o nome se for diferente) */
+.swiper-slide:nth-child(2) {
+  background-image: url("../img/image/banner2.jpg");
+}
+
+/* Slide 3 (Estou assumindo que você tem um banner3.jpg, ajuste o nome se for diferente) */
+.swiper-slide:nth-child(3) {
+  background-image: url("../img/image/banner3.jpg");
+}
+
+/* O restante do CSS continua igual */
+.hero-overlay {
   position: absolute;
   top: 0;
   left: 0;
   width: 100%;
   height: 100%;
-  background-color: rgba(10, 66, 117, 0.6); /* Azul escuro com 60% de transparência */
-  z-index: -1; /* Coloca a camada entre o fundo e o conteúdo */
+  background-color: rgba(0, 0, 0, 0.5);
 }
 
-.hero-subtitle {
+.hero-content {
+  position: relative;
+  max-width: 800px;
+  animation: fadeIn 1s ease-in-out;
+}
+
+.hero-content .hero-subtitle {
   font-size: 1.2rem;
-  font-weight: 400;
+  font-weight: 600;
+  text-transform: uppercase;
   letter-spacing: 1px;
 }
-
-.hero-title {
-  font-size: 3.5rem; /* Tamanho grande para o título principal */
-  font-family: var(--font-secondary); /* Usa a fonte com serifa para destaque */
-  margin: 10px 0;
-  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5); /* Sombra no texto para destacar */
-}
-
-.hero-text {
-  font-size: 1.2rem;
-  max-width: 600px; /* Evita que a linha fique muito longa em telas grandes */
-  margin: 0 auto 30px auto; /* Centraliza o texto */
-}
-
-/* Estilo para o botão principal da seção hero */
-.btn-main {
-  background-color: var(--color-secondary); /* Fundo dourado */
-  color: var(--color-headings);
-  padding: 15px 35px;
-  font-size: 1.1rem;
+.hero-content .hero-title {
+  font-size: 3.5rem;
   font-weight: 700;
-  border-radius: 5px;
-  text-transform: uppercase;
-  transition: all 0.3s ease;
+  margin: 10px 0 20px;
+  text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.5);
+}
+.hero-content .hero-text {
+  font-size: 1.3rem;
+  margin-bottom: 30px;
 }
 
-.btn-main:hover {
-  background-color: #e4c55a; /* Dourado um pouco mais claro no hover */
-  transform: scale(1.05); /* Aumenta um pouco o botão */
-  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+:root {
+  --swiper-navigation-color: #fff;
+  --swiper-pagination-color: #fff;
+  --swiper-pagination-bullet-inactive-color: #fff;
+  --swiper-pagination-bullet-inactive-opacity: 0.5;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
