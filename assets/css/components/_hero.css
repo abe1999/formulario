@@ -1,49 +1,56 @@
-/* Estilos para o Hero Carousel */
+/* =================================================================
+   VERSÃO FINAL E RESPONSIVA DO HERO CAROUSEL
+================================================================= */
 
 .hero-carousel {
   width: 100%;
-  height: 85vh; /* Ocupa 85% da altura da tela */
-  min-height: 500px;
-  position: relative; /* Essencial para o Swiper funcionar bem */
+  /* Define a altura para 90% da tela, MAS...
+      ...limita a altura máxima em 750px em monitores grandes.
+      Isso impede que ele fique "enorme".
+    */
+  height: 90vh;
+  max-height: 750px;
+  min-height: 500px; /* Garante uma altura mínima */
+  position: relative;
 }
 
 .hero-carousel .swiper,
 .hero-carousel .swiper-wrapper,
 .hero-carousel .swiper-slide {
   width: 100%;
-  height: 100%; /* Garante que todos os elementos ocupem a altura total */
+  height: 100%;
 }
 
+/* Regra geral para todos os slides */
 .swiper-slide {
   background-size: cover;
   background-position: center;
-  position: relative;
-  color: #fff;
+  background-repeat: no-repeat;
   display: flex;
   align-items: center;
   justify-content: center;
   text-align: center;
+  color: #fff;
 }
 
-/* === AQUI ADICIONAMOS SUAS IMAGENS LOCAIS === */
-/* O caminho '../' sobe um nível (de 'components' para 'css'), o segundo sobe para 'assets', e então desce para 'img' */
+/* Definindo as imagens de fundo (MÉTODO CORRIGIDO) */
 
 /* Slide 1 */
-.swiper-slide:nth-child(1) {
-  background-image: url("../img/image/banner.jpg");
+.slide-bg-1 {
+  background-image: url("/assets/img/image/banner.jpg");
 }
 
-/* Slide 2 (Estou assumindo que você tem um banner2.jpg, ajuste o nome se for diferente) */
-.swiper-slide:nth-child(2) {
-  background-image: url("../img/image/banner2.jpg");
+/* Slide 2 */
+.slide-bg-2 {
+  background-image: url("/assets/img/image/banner2.jpg");
 }
 
-/* Slide 3 (Estou assumindo que você tem um banner3.jpg, ajuste o nome se for diferente) */
-.swiper-slide:nth-child(3) {
-  background-image: url("../img/image/banner3.jpg");
+/* Slide 3 */
+.slide-bg-3 {
+  background-image: url("/assets/img/image/banner3.jpg");
 }
 
-/* O restante do CSS continua igual */
+/* Reativando o overlay (filtro escuro) para legibilidade */
 .hero-overlay {
   position: absolute;
   top: 0;
@@ -51,31 +58,31 @@
   width: 100%;
   height: 100%;
   background-color: rgba(0, 0, 0, 0.5);
+  z-index: 2; /* Fica entre a imagem e o texto */
 }
 
+/* Estilos para o conteúdo de texto */
 .hero-content {
   position: relative;
+  z-index: 3; /* Fica na frente de tudo */
   max-width: 800px;
+  padding: 20px;
   animation: fadeIn 1s ease-in-out;
 }
 
-.hero-content .hero-subtitle {
-  font-size: 1.2rem;
-  font-weight: 600;
-  text-transform: uppercase;
-  letter-spacing: 1px;
-}
 .hero-content .hero-title {
   font-size: 3.5rem;
   font-weight: 700;
-  margin: 10px 0 20px;
   text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.5);
+  margin: 10px 0 20px;
 }
+
 .hero-content .hero-text {
   font-size: 1.3rem;
   margin-bottom: 30px;
 }
 
+/* Estilos para a navegação do Swiper */
 :root {
   --swiper-navigation-color: #fff;
   --swiper-pagination-color: #fff;
@@ -91,5 +98,26 @@
   to {
     opacity: 1;
     transform: translateY(0);
+  }
+}
+
+/* =================================================================
+   AJUSTES RESPONSIVOS PARA CELULAR
+================================================================= */
+@media (max-width: 768px) {
+  .hero-carousel {
+    /* Diminui a altura em telas de celular */
+    height: 70vh;
+    min-height: 450px;
+  }
+
+  .hero-content .hero-title {
+    /* Diminui o tamanho da fonte do título principal */
+    font-size: 2.2rem;
+  }
+
+  .hero-content .hero-text {
+    /* Diminui o tamanho da fonte do texto de apoio */
+    font-size: 1.1rem;
   }
 }

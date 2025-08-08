@@ -1,66 +1,44 @@
 /* =================================================================
-ESTILOS DO CABEÇALHO (VERSÃO SIMPLIFICADA)
+   ESTILOS DO CABEÇALHO (VERSÃO FINAL E CORRIGIDA)
 ================================================================= */
 
 /* --- Cabeçalho Principal --- */
 .main-header {
   background-color: var(--color-white);
-  padding: 15px 0; /* Este será o padding do estado GRANDE */
+  padding: 15px 0;
   border-bottom: 1px solid var(--color-border);
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
-
-  /* LINHAS ADICIONADAS */
-  position: fixed; /* Fixa o header no topo da tela */
+  position: fixed;
   top: 0;
   left: 0;
   width: 100%;
-  z-index: 1000; /* Garante que ele fique sobre todo o conteúdo */
-  transition: padding 0.4s ease-in-out; /* Animação suave para o padding */
+  z-index: 1000;
+  transition: padding 0.4s ease-in-out;
 }
 
 .main-header .container {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  gap: 20px; /* Adiciona um espaço geral entre os elementos */
+  gap: 20px;
 }
 
 .main-header .logo img {
   height: 60px;
   width: auto;
-
-  /* LINHA ADICIONADA */
-  transition: height 0.4s ease-in-out; /* Animação suave para a altura */
+  transition: height 0.4s ease-in-out;
 }
 
-/* --- Navegação Principal --- */
-/* 3. Estiliza o painel do menu mobile (que está escondido por padrão) */
+/* --- Navegação Principal (ESTADO DESKTOP) --- */
 .main-nav {
-  position: fixed;
-  top: 0;
-  right: -100%;
-  width: 300px;
-  max-width: 80%;
-  height: 100vh;
-
-  /* GARANTIA 1: O menu precisa ter uma cor de fundo sólida para não ser transparente */
-  background-color: var(--color-white);
-
-  box-shadow: -5px 0 15px rgba(0, 0, 0, 0.1);
-
-  /* GARANTIA 2: ESTA É A LINHA MAIS IMPORTANTE! */
-  /* Define que o menu ficará na camada 2000, bem na frente. */
-  z-index: 2000;
-
-  transition: right 0.4s cubic-bezier(0.77, 0, 0.175, 1);
-  padding: 60px 20px 20px 20px;
+  flex-grow: 1; /* Permite que o menu se expanda e centralize a lista */
 }
 
 .main-nav ul {
   display: flex;
-  justify-content: center; /* Centraliza o menu no espaço disponível */
+  justify-content: center;
   align-items: center;
-  gap: 30px; /* Espaçamento entre os itens do menu */
+  gap: 30px;
 }
 
 .main-nav ul li a {
@@ -93,125 +71,93 @@ ESTILOS DO CABEÇALHO (VERSÃO SIMPLIFICADA)
   width: 100%;
 }
 
-/* --- Itens da Direita (Redes Sociais e Busca) --- */
+/* --- Itens da Direita (Redes Sociais) --- */
 .header-right {
   display: flex;
   align-items: center;
-  gap: 25px; /* Espaço entre as redes sociais e a busca */
+  gap: 25px;
 }
 
 .social-media {
   display: flex;
-  gap: 18px; /* Espaço entre cada ícone social */
+  gap: 18px;
 }
 
 .social-media a {
   font-size: 18px;
-  color: var(--color-text-light); /* Cor nova para fundo claro */
+  color: var(--color-text-light);
   transition: color 0.3s ease, transform 0.3s ease;
 }
 
 .social-media a:hover {
-  color: var(--color-primary); /* Cor nova no hover */
+  color: var(--color-primary);
   transform: scale(1.1);
 }
 
-.search-icon {
-  font-size: 20px;
-  color: var(--color-text-light);
-  cursor: pointer;
-  transition: color 0.3s ease;
-}
-
-.search-icon:hover {
-  color: var(--color-primary);
-}
-
-/* =================================================================
-   ESTILOS DO MENU DROPDOWN
-================================================================= */
-
-/* Define o item da lista como o contêiner do dropdown.
-   Usa o mesmo 'display' que os outros 'li' dentro do flex container. */
+/* --- ESTILOS DO MENU DROPDOWN (Desktop) --- */
 .main-nav .dropdown {
   position: relative;
 }
 
-/* O conteúdo do dropdown (a caixa que desce) */
 .dropdown-content {
-  display: none; /* Escondido por padrão */
-  position: absolute; /* Posicionado em relação ao .dropdown */
-  top: 100%; /* Aparece logo abaixo do item principal do menu */
+  display: none;
+  position: absolute;
+  top: 100%;
   left: 0;
   background-color: var(--color-white);
-  min-width: 200px; /* Largura mínima do dropdown */
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Sombra similar à do header */
+  min-width: 200px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
   border: 1px solid var(--color-border);
-  border-radius: 0 0 8px 8px; /* Cantos arredondados apenas na parte de baixo */
-  z-index: 1000; /* Garante que o dropdown fique sobre todos os outros elementos */
-  overflow: hidden; /* Garante que os cantos arredondados funcionem */
+  border-radius: 0 0 8px 8px;
+  z-index: 1000;
+  overflow: hidden;
 }
 
-/* Links individuais dentro do dropdown */
 .dropdown-content a {
-  /* Reseta os estilos herdados do menu principal para um visual de lista */
   font-size: 15px;
   font-weight: 500;
-  text-transform: none; /* Texto normal, não maiúsculo */
+  text-transform: none;
   color: var(--color-text-light);
   padding: 12px 20px;
-  display: block; /* Faz o link ocupar todo o espaço */
+  display: block;
   transition: all 0.3s ease;
 }
 
-/* Remove a animação da linha de baixo nos links do dropdown */
 .dropdown-content a::after {
   display: none;
 }
-
-/* Efeito ao passar o mouse nos links do dropdown */
 .dropdown-content a:hover {
-  background-color: var(--color-primary); /* Usa sua cor primária no fundo */
-  color: var(--color-white); /* Texto fica branco */
+  background-color: var(--color-primary);
+  color: var(--color-white);
 }
-
-/* A Mágica: Mostra o dropdown quando o mouse está sobre o .dropdown */
 .dropdown:hover .dropdown-content {
   display: block;
 }
 
-/* Estilo para a setinha para baixo */
 .drop-btn .fa-caret-down {
   margin-left: 6px;
   font-size: 0.8em;
   transition: transform 0.3s ease;
 }
-
-/* Gira a setinha quando o menu está aberto (hover) */
 .dropdown:hover .drop-btn .fa-caret-down {
   transform: rotate(180deg);
 }
 
-/* =================================================================
-   ESTADO DO CABEÇALHO AO ROLAR A PÁGINA (SCROLLED)
-================================================================= */
-
-/* Quando o header tiver a classe .scrolled, o padding diminui */
+/* --- ESTADO DO CABEÇALHO AO ROLAR A PÁGINA (SCROLLED) --- */
 .main-header.scrolled {
   padding: 5px 0;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Sombra um pouco mais forte */
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
 }
 
-/* Quando o header tiver a classe .scrolled, a altura do logo diminui */
 .main-header.scrolled .logo img {
-  height: 45px; /* Nova altura do logo (menor) */
+  height: 45px;
 }
 
 /* =================================================================
    ESTILOS RESPONSIVOS DO CABEÇALHO (MENU HAMBÚRGUER)
 ================================================================= */
 
-/* Por padrão, o botão de fechar e o hambúrguer são escondidos no desktop */
+/* Botões do menu mobile ficam escondidos por padrão no desktop */
 .hamburger-menu,
 .close-menu-button {
   display: none;
@@ -222,41 +168,50 @@ ESTILOS DO CABEÇALHO (VERSÃO SIMPLIFICADA)
   color: var(--color-text-light);
 }
 
-/* Usaremos um breakpoint de 992px para mudar para o menu mobile */
-@media (max-width: 992px) {
-  /* 1. Esconde a navegação principal e as redes sociais do desktop */
+/* Overlay (fundo escuro) quando o menu está aberto */
+body.menu-open {
+  overflow: hidden;
+}
 
+/* ---- A MEDIA QUERY QUE FAZ A MÁGICA ---- */
+@media (max-width: 992px) {
+  /* Esconde o menu de texto e as redes sociais no mobile */
   .main-nav ul,
   .social-media {
     display: none;
   }
 
-  /* 2. Mostra o botão hambúrguer */
+  /* Mostra o botão hambúrguer no mobile */
   .hamburger-menu {
     display: block;
   }
 
-  /* 3. Estiliza o painel do menu mobile (que está escondido por padrão) */
+  /* AQUI O .main-nav SE TRANSFORMA EM PAINEL LATERAL */
   .main-nav {
     position: fixed;
     top: 0;
-    right: -100%; /* Começa escondido fora da tela, à direita */
-    width: 300px; /* Largura do menu mobile */
+    right: -100%;
+    width: 300px;
     max-width: 80%;
     height: 100vh;
     background-color: var(--color-white);
     box-shadow: -5px 0 15px rgba(0, 0, 0, 0.1);
-    z-index: 2000;
-    transition: right 0.4s cubic-bezier(0.77, 0, 0.175, 1); /* Animação de deslize */
+    z-index: 2000; /* Z-INDEX ALTO PARA FICAR NA FRENTE */
+    transition: right 0.4s cubic-bezier(0.77, 0, 0.175, 1);
     padding: 60px 20px 20px 20px;
+    flex-grow: 0; /* Reseta o comportamento do desktop */
   }
 
-  /* 4. A classe que o JavaScript vai adicionar para MOSTRAR o menu */
+  /* Faz o painel aparecer quando a classe .menu-open é adicionada no <body> */
   .menu-open .main-nav {
-    right: 0; /* Traz o menu para dentro da tela */
+    right: 0;
   }
 
-  /* 5. Mostra e posiciona o botão de fechar DENTRO do menu mobile */
+  .menu-open .main-header {
+    z-index: 2001;
+  }
+
+  /* Mostra o botão de fechar no mobile */
   .close-menu-button {
     display: block;
     position: absolute;
@@ -265,7 +220,7 @@ ESTILOS DO CABEÇALHO (VERSÃO SIMPLIFICADA)
     font-size: 28px;
   }
 
-  /* 6. Re-exibe a lista de links, mas agora em formato de coluna */
+  /* Transforma a lista de links horizontal em vertical */
   .main-nav ul {
     display: flex;
     flex-direction: column;
@@ -285,28 +240,20 @@ ESTILOS DO CABEÇALHO (VERSÃO SIMPLIFICADA)
     font-size: 18px;
   }
 
-  /* Ajustes no dropdown para funcionar no mobile */
+  /* Ajustes do dropdown para o mobile */
   .dropdown-content {
     position: static;
-    display: none; /* Escondido por padrão */
+    display: none;
     box-shadow: none;
     border: none;
     background-color: #f9f9f9;
   }
 
   .dropdown.active .dropdown-content {
-    display: block; /* Será mostrado via JS */
+    display: block;
   }
-}
 
-/* Overlay para o menu mobile */
-body.menu-open {
-  /* Impede que a página de trás seja rolada quando o menu está aberto */
-  overflow: hidden;
-}
-
-/* Opcional mas recomendado: Adiciona o fundo escurecido */
-@media (max-width: 992px) {
+  /* Estilo do overlay no mobile */
   body.menu-open::before {
     content: "";
     position: fixed;
@@ -314,9 +261,8 @@ body.menu-open {
     left: 0;
     width: 100%;
     height: 100%;
-    background-color: rgba(0, 0, 0, 0.6); /* Preto com 60% de opacidade */
-    z-index: 1999; /* Fica logo atrás do menu */
-    opacity: 1;
+    background-color: rgba(0, 0, 0, 0.6);
+    z-index: 1999; /* Z-INDEX MENOR QUE O DO MENU */
     transition: opacity 0.4s ease;
   }
 }

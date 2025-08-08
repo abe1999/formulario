@@ -11,7 +11,7 @@
 /* 2. Componentes Reutilizáveis (o coração do seu design) */
 @import url("./components/_header.css");
 @import url("./components/_footer.css");
-@import url("./components/_hero-carousel.css"); /* Adicionado para o carrossel */
+@import url("./components/_hero.css"); /* Adicionado para o carrossel */
 @import url("./components/_quick-links.css");
 @import url("./components/_latest-news.css");
 /* Removi componentes que não tínhamos criado para manter limpo */
