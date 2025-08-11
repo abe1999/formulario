@@ -1,25 +1,49 @@
-/* =================================================================
-VARIÁVEIS GLOBAIS
-Definição de cores, fontes e outros valores reutilizáveis.
-================================================================= */
-
 :root {
-  /* Cores Principais */
-  --color-primary: #0a4275;      /* Azul escuro e sóbrio */
-  --color-primary-dark: #07335b; /* Azul para hover de botões */
-  --color-secondary: #d4af37;    /* Dourado/Ocre para detalhes */
+  /* ==================================================
+     PALETA DE CORES PRINCIPAL - TEMA "MANTO DE MARIA"
+  ================================================== */
 
-  /* Cores de Texto */
-  --color-text: #333333;         /* Cor principal para parágrafos */
-  --color-text-light: #555555;   /* Cor de texto mais suave */
-  --color-headings: #1c1c1c;     /* Cor para títulos (quase preto) */
+  /* Azul Mariano: Profundo e sereno, como o manto de Nossa Senhora. Será a cor principal do site. */
+  --color-primary: #0a4275;
+  
+  /* Azul Escuro: Uma variação para hovers de botões e links, dando profundidade. */
+  --color-primary-dark: #07335b;
+  
+  /* Dourado Divino: Representa a luz, a glória e as estrelas do manto. Será a cor de destaque. */
+  --color-secondary: #d4af37;
+  
+  /* Dourado Claro: Um tom mais brilhante para o efeito hover, trazendo interatividade. */
+  --color-secondary-hover: #e6c35c;
 
-  /* Cores Neutras */
+  /* ==================================================
+     CORES DE TEXTO E NEUTRAS
+  ================================================== */
+  
+  /* Cinza Chumbo: Cor principal para parágrafos. É mais suave que o preto puro e harmoniza com o azul. */
+  --color-text: #333333;
+  
+  /* Cinza Suave: Para textos secundários e descrições. */
+  --color-text-light: #555555;
+  
+  /* A cor dos títulos principais, para manter a identidade. */
+  --color-headings: #1c1c1c;
+
+  /* ==================================================
+     CORES DE FUNDO E BORDAS
+  ================================================== */
+
+  /* Branco Alabastro: Um branco levemente "quente", mais acolhedor que o branco puro. */
   --color-white: #ffffff;
-  --color-light-gray: #f4f4f4;  /* Para fundos de seção */
-  --color-border: #dddddd;      /* Para bordas sutis */
+  
+  /* Cinza Neblina: Para fundos de seções, criando um contraste sutil. */
+  --color-light-gray: #f4f4f4;
+  
+  /* Cinza Claro: Para bordas e divisórias discretas. */
+  --color-border: #dddddd;
 
-  /* Fontes */
-  --font-primary: 'Roboto', sans-serif; /* Uma fonte limpa para o corpo */
-  --font-secondary: 'Merriweather', serif; /* Uma fonte com serifa para títulos */
+  /* ==================================================
+     FONTES (MANTIDAS, SÃO BOAS ESCOLHAS)
+  ================================================== */
+  --font-primary: 'Roboto', sans-serif;
+  --font-secondary: 'Merriweather', serif;
 }
