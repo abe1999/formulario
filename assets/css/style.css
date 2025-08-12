@@ -1,8 +1,3 @@
-/* =================================================================
-   ARQUIVO CSS PRINCIPAL (style.css)
-   Importa todos os outros arquivos de estilo na ordem correta.
-================================================================= */
-
 /* 1. Base e Configurações Globais */
 @import url("./base/_reset.css");
 @import url("./base/_variables.css");
@@ -11,22 +6,15 @@
 /* 2. Componentes Reutilizáveis (o coração do seu design) */
 @import url("./components/_header.css");
 @import url("./components/_footer.css");
-@import url("./components/_hero.css"); /* Adicionado para o carrossel */
+@import url("./components/_hero.css"); /* Corrigido o nome do arquivo do carrossel */
 @import url("./components/_quick-links.css");
 @import url("./components/_latest-news.css");
-@import url("./components/_event-detail.css");
-@import url("./components/_comunidade-detalhe.css");
-@import url("./components/_pastoral-detalhe.css");
-
-/* Removi componentes que não tínhamos criado para manter limpo */
+@import url("./components/_page-header.css"); /* Adicionado o estilo do título de página */
 
 /* 3. Estilos Específicos de Páginas */
 @import url("./pages/_events.css");
-@import url("./pages/_pastorais.css"); /* Padronizado o nome com underscore */
+@import url("./pages/_pastorais.css");
 @import url("./pages/_comunidades.css");
-@import url("./pages/_comunidade-detalhe.css");
+@import url("./pages/_comunidade-detalhe.css"); /* Mantido apenas uma vez, no local correto */
+@import url("./pages/_pastoral-detalhe.css");
 @import url("./pages/_acampamento.css");
-
-/* REMOVIDO: A seção "Layout Principal (Partials)" foi removida 
-   porque estava importando arquivos HTML da pasta errada.
-*/
