@@ -37,17 +37,17 @@
 
 /* Slide 1 */
 .slide-bg-1 {
-  background-image: url("/assets/img/image/banner.jpg");
+  background-image: url("assets/img/image/banner.jpg");
 }
 
 /* Slide 2 */
 .slide-bg-2 {
-  background-image: url("/assets/img/image/banner2.jpg");
+  background-image: url("assets/img/image/banner2.jpg");
 }
 
 /* Slide 3 */
 .slide-bg-3 {
-  background-image: url("/assets/img/image/banner3.jpg");
+  background-image: url("assets/img/image/banner3.jpg");
 }
 
 /* Reativando o overlay (filtro escuro) para legibilidade */
