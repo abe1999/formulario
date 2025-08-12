@@ -4,13 +4,9 @@
 
 .hero-carousel {
   width: 100%;
-  /* Define a altura para 90% da tela, MAS...
-      ...limita a altura máxima em 750px em monitores grandes.
-      Isso impede que ele fique "enorme".
-    */
   height: 90vh;
   max-height: 750px;
-  min-height: 500px; /* Garante uma altura mínima */
+  min-height: 500px;
   position: relative;
 }
 
@@ -33,24 +29,24 @@
   color: #fff;
 }
 
-/* Definindo as imagens de fundo (MÉTODO CORRIGIDO) */
+/* === CAMINHO DAS IMAGENS CORRIGIDO E FINAL === */
 
 /* Slide 1 */
 .slide-bg-1 {
-  background-image: url("../../img/image/banner.jpg");
+  background-image: url("../img/image/banner.jpg");
 }
 
 /* Slide 2 */
 .slide-bg-2 {
-  background-image: url("../../img/image/banner2.jpg");
+  background-image: url("../img/image/banner2.jpg");
 }
 
 /* Slide 3 */
 .slide-bg-3 {
-  background-image: url("../../img/image/banner3.jpg");
+  background-image: url("../img/image/banner3.jpg");
 }
 
-/* Reativando o overlay (filtro escuro) para legibilidade */
+/* Overlay (filtro escuro) para legibilidade */
 .hero-overlay {
   position: absolute;
   top: 0;
@@ -106,18 +102,15 @@
 ================================================================= */
 @media (max-width: 768px) {
   .hero-carousel {
-    /* Diminui a altura em telas de celular */
     height: 70vh;
     min-height: 450px;
   }
 
   .hero-content .hero-title {
-    /* Diminui o tamanho da fonte do título principal */
     font-size: 2.2rem;
   }
 
   .hero-content .hero-text {
-    /* Diminui o tamanho da fonte do texto de apoio */
     font-size: 1.1rem;
   }
 }
