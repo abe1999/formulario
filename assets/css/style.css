@@ -14,6 +14,11 @@
 @import url("./components/_hero.css"); /* Adicionado para o carrossel */
 @import url("./components/_quick-links.css");
 @import url("./components/_latest-news.css");
+@import url("./components/_comunidades.css");
+@import url("./components/_event-detail.css");
+@import url("./components/_comunidade-detalhe.css");
+@import url("./components/_acampamento.css");
+
 /* Removi componentes que não tínhamos criado para manter limpo */
 
 /* 3. Estilos Específicos de Páginas */

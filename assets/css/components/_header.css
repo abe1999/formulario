@@ -16,20 +16,26 @@
   transition: padding 0.4s ease-in-out;
 }
 
-.main-header .container, .header-right {
+.main-header .container,
+.header-right {
   display: flex;
   align-items: center;
   gap: 20px;
 }
 
 .main-header .logo img {
-  height: 60px;
+  height: 75px;
   width: auto;
-  transition: height 0.4s ease-in-out;
+  margin-top: -7.5px;
+  margin-bottom: -7.5px;
+
+  transition: height 0.4s ease-in-out, margin 0.4s ease-in-out;
 }
 
 /* --- Navegação Principal (Desktop) --- */
-.main-nav { flex-grow: 1; }
+.main-nav {
+  flex-grow: 1;
+}
 .main-nav ul {
   display: flex;
   justify-content: center;
@@ -46,7 +52,9 @@
   position: relative;
   transition: color 0.3s ease;
 }
-.main-nav ul li a:hover { color: var(--color-secondary-hover); }
+.main-nav ul li a:hover {
+  color: var(--color-secondary-hover);
+}
 
 .main-nav ul li a::after {
   content: "";
@@ -58,10 +66,15 @@
   background-color: var(--color-secondary-hover);
   transition: width 0.3s ease;
 }
-.main-nav ul li a:hover::after { width: 100%; }
+.main-nav ul li a:hover::after {
+  width: 100%;
+}
 
 /* --- Redes Sociais --- */
-.social-media { display: flex; gap: 18px; }
+.social-media {
+  display: flex;
+  gap: 18px;
+}
 .social-media a {
   font-size: 18px;
   color: var(--color-secondary);
@@ -73,7 +86,9 @@
 }
 
 /* --- Menu Dropdown (REFINADO) --- */
-.main-nav .dropdown { position: relative; }
+.main-nav .dropdown {
+  position: relative;
+}
 .dropdown-content {
   display: none;
   position: absolute;
@@ -94,7 +109,7 @@
   font-weight: 500;
   text-transform: none;
   color: var(--color-secondary);
-  
+
   /* Mantém o padding vertical e direito */
   padding-top: 15px;
   padding-bottom: 15px;
@@ -105,11 +120,11 @@
   /* Alinha o conteúdo (ícone + texto) no início (à esquerda) */
   display: flex;
   align-items: center;
-  justify-content: flex-start; 
+  justify-content: flex-start;
 
   /* 1. GAP INICIAL: Para desgrudar o ícone da borda da caixa. */
   /* AJUSTE ESTE VALOR (ex: 25px, 30px) ATÉ GOSTAR DO RESULTADO. */
-  padding-left: 45px; 
+  padding-left: 45px;
 
   /* 2. GAP ENTRE ÍCONE E TEXTO: Para manter os dois próximos. */
   /* Ajuste este valor se quiser o texto mais perto ou mais longe do ícone. */
@@ -119,8 +134,8 @@
 }
 
 /* O resto do seu CSS continua igual... */
-.dropdown-content a::after { 
-  display: none; 
+.dropdown-content a::after {
+  display: none;
 }
 
 .dropdown-content a:hover {
@@ -128,7 +143,9 @@
   color: var(--color-secondary-hover);
   gap: 15px; /* Efeito sutil no hover */
 }
-.dropdown:hover .dropdown-content { display: block; }
+.dropdown:hover .dropdown-content {
+  display: block;
+}
 
 .drop-btn .fa-caret-down {
   color: var(--color-secondary);
@@ -136,16 +153,23 @@
   font-size: 0.8em;
   transition: transform 0.3s ease;
 }
-.dropdown:hover .drop-btn .fa-caret-down { transform: rotate(180deg); }
+.dropdown:hover .drop-btn .fa-caret-down {
+  transform: rotate(180deg);
+}
 
 /* --- Header Rolado --- */
-.main-header.scrolled { padding: 5px 0; }
-.main-header.scrolled .logo img { height: 45px; }
+.main-header.scrolled {
+  padding: 5px 0;
+}
+.main-header.scrolled .logo img {
+  height: 45px;
+}
 
 /* =================================================================
    ESTILOS RESPONSIVOS DO CABEÇALHO
 ================================================================= */
-.hamburger-menu, .close-menu-button {
+.hamburger-menu,
+.close-menu-button {
   display: none;
   background: none;
   border: none;
@@ -153,11 +177,18 @@
   cursor: pointer;
   color: var(--color-secondary);
 }
-body.menu-open { overflow: hidden; }
+body.menu-open {
+  overflow: hidden;
+}
 
 @media (max-width: 992px) {
-  .main-nav ul, .social-media { display: none; }
-  .hamburger-menu { display: block; }
+  .main-nav ul,
+  .social-media {
+    display: none;
+  }
+  .hamburger-menu {
+    display: block;
+  }
 
   .main-nav {
     position: fixed;
@@ -173,10 +204,14 @@ body.menu-open { overflow: hidden; }
     padding: 60px 20px 20px 20px;
     flex-grow: 0;
   }
-  
-  .menu-open .main-nav { right: 0; }
-  .menu-open .main-header { z-index: 2001; }
-  
+
+  .menu-open .main-nav {
+    right: 0;
+  }
+  .menu-open .main-header {
+    z-index: 2001;
+  }
+
   .close-menu-button {
     display: block;
     position: absolute;
@@ -184,17 +219,25 @@ body.menu-open { overflow: hidden; }
     right: 15px;
     font-size: 28px;
   }
-  .main-nav ul { display: flex; flex-direction: column; align-items: flex-start; gap: 0; }
-  .main-nav ul li { width: 100%; border-bottom: 1px solid var(--color-border); }
+  .main-nav ul {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0;
+  }
+  .main-nav ul li {
+    width: 100%;
+    border-bottom: 1px solid var(--color-border);
+  }
   .main-nav ul li a {
     /* Retorna para a fonte principal no menu mobile para melhor leitura */
-    font-family: var(--font-primary); 
+    font-family: var(--font-primary);
     font-size: 18px;
     display: block;
     width: 100%;
     padding: 20px 10px;
   }
-  
+
   .dropdown-content {
     position: static;
     display: none;
@@ -208,10 +251,12 @@ body.menu-open { overflow: hidden; }
     padding: 12px 15px;
     font-size: 16px;
   }
-  .dropdown.active .dropdown-content { display: block; }
+  .dropdown.active .dropdown-content {
+    display: block;
+  }
 
   body.menu-open::before {
-    content: '';
+    content: "";
     position: fixed;
     top: 0;
     left: 0;

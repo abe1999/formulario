@@ -28,18 +28,20 @@ document.addEventListener("DOMContentLoaded", function () {
     `;
   }
 
+  // VERSÃO CORRIGIDA - Copie e cole esta no lugar da antiga
   function createHomeEventCard(evento) {
+    // Alteramos as classes para bater com o CSS da "Opção 2"
     return `
-      <article class="evento-card-compacto">
-        <a href="${evento.link}">
-          <img src="${evento.image}" alt="Imagem do evento: ${evento.title}">
-          <div class="evento-compacto-conteudo">
-            <p class="evento-compacto-data">${formatarData(evento.date)}</p>
-            <h3 class="evento-compacto-titulo">${evento.title}</h3>
-          </div>
-        </a>
-      </article>
-    `;
+    <div class="home-news-card">
+      <a href="${evento.link}">
+        <img src="${evento.image}" alt="Imagem do evento: ${evento.title}">
+        <div class="home-news-content">
+          <span class="home-news-date">${formatarData(evento.date)}</span>
+          <h3 class="home-news-title">${evento.title}</h3>
+        </div>
+      </a>
+    </div>
+  `;
   }
 
   async function fetchAndDisplayEvents() {

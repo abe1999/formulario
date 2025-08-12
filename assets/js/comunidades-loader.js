@@ -36,18 +36,20 @@ document.addEventListener("DOMContentLoaded", () => {
         );
       }
 
+      // CÓDIGO PARA A OPÇÃO 3 (Avatares Circulares)
       let cardsHTML = "";
       comunidades.forEach((comunidade) => {
         cardsHTML += `
-                    <div class="comunidade-card">
-                        <img src="${comunidade.imagemCard}" alt="Fachada da ${comunidade.nome}">
-                        <div class="card-content">
-                            <h3>${comunidade.nome}</h3>
-                            <p>${comunidade.resumo}</p>
-                            <a href="comunidade.html?id=${comunidade.id}" class="btn">Conheça Mais</a>
-                        </div>
-                    </div>
-                `;
+    <div class="comunidade-card-avatar">
+      <a href="comunidade.html?id=${comunidade.id}">
+        <div class="avatar-container">
+          <img src="${comunidade.imagemCard}" alt="${comunidade.nome}">
+        </div>
+        <h3 class="comunidade-titulo">${comunidade.nome}</h3>
+        <p class="comunidade-descricao">${comunidade.resumo}</p>
+      </a>
+    </div>
+  `;
       });
 
       console.log("6. HTML dos cards gerado. Inserindo na página...");
