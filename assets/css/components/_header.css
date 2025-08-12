@@ -103,33 +103,15 @@
   z-index: 1000;
   overflow: hidden;
 }
+
 .dropdown-content a {
   font-family: var(--font-primary);
   font-size: 15px;
   font-weight: 500;
   text-transform: none;
   color: var(--color-secondary);
-
-  /* Mantém o padding vertical e direito */
-  padding-top: 15px;
-  padding-bottom: 15px;
-  padding-right: 20px;
-
-  /* --- ALINHAMENTO CORRIGIDO --- */
-
-  /* Alinha o conteúdo (ícone + texto) no início (à esquerda) */
-  display: flex;
-  align-items: center;
-  justify-content: flex-start;
-
-  /* 1. GAP INICIAL: Para desgrudar o ícone da borda da caixa. */
-  /* AJUSTE ESTE VALOR (ex: 25px, 30px) ATÉ GOSTAR DO RESULTADO. */
-  padding-left: 45px;
-
-  /* 2. GAP ENTRE ÍCONE E TEXTO: Para manter os dois próximos. */
-  /* Ajuste este valor se quiser o texto mais perto ou mais longe do ícone. */
-  gap: 12px;
-
+  padding: 15px 25px; /* Aumentamos o padding esquerdo para compensar */
+  display: block;
   transition: all 0.3s ease;
 }
 
@@ -188,6 +170,12 @@ body.menu-open {
   }
   .hamburger-menu {
     display: block;
+  }
+
+  .header-right {
+    flex-grow: 1; 
+    display: flex; 
+    justify-content: flex-end; /
   }
 
   .main-nav {
