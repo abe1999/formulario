@@ -93,6 +93,11 @@ document.addEventListener("DOMContentLoaded", function () {
   // =================================================================
 
   // Carrega as partes principais do layout.
-  loadHTML("header-placeholder", "/partials/header.html");
-  loadHTML("footer-placeholder", "/partials/footer.html");
+  // =================================================================
+  // EXECUÇÃO CORRIGIDA
+  // =================================================================
+
+  // Carrega as partes principais do layout.
+  loadHTML("header-placeholder", "partials/header.html");
+  loadHTML("footer-placeholder", "partials/footer.html");
 });
