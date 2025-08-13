@@ -4,7 +4,7 @@
 @import url("./base/_typography.css");
 
 /* 2. Componentes Reutilizáveis (o coração do seu design) */
-@import url("./components/_header.css");
+@import url("./components/header.css");
 @import url("./components/_footer.css");
 @import url("./components/_hero.css"); /* Corrigido o nome do arquivo do carrossel */
 @import url("./components/_quick-links.css");
