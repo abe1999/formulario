@@ -1,20 +1,20 @@
 /* 1. Base e Configurações Globais */
-@import url("./base/_reset.css");
-@import url("./base/_variables.css");
-@import url("./base/_typography.css");
+@import url("./base/reset.css");
+@import url("./base/variables.css");
+@import url("./base/typography.css");
 
 /* 2. Componentes Reutilizáveis (o coração do seu design) */
 @import url("./components/header.css");
-@import url("./components/_footer.css");
-@import url("./components/_hero.css"); /* Corrigido o nome do arquivo do carrossel */
-@import url("./components/_quick-links.css");
-@import url("./components/_latest-news.css");
-@import url("./components/_page-header.css"); /* Adicionado o estilo do título de página */
+@import url("./components/footer.css");
+@import url("./components/hero.css"); /* Corrigido o nome do arquivo do carrossel */
+@import url("./components/quick-links.css");
+@import url("./components/latest-news.css");
+@import url("./components/page-header.css"); /* Adicionado o estilo do título de página */
 
 /* 3. Estilos Específicos de Páginas */
-@import url("./pages/_events.css");
-@import url("./pages/_pastorais.css");
-@import url("./pages/_comunidades.css");
-@import url("./pages/_comunidade-detalhe.css"); /* Mantido apenas uma vez, no local correto */
-@import url("./pages/_pastoral-detalhe.css");
-@import url("./pages/_acampamento.css");
+@import url("./pages/events.css");
+@import url("./pages/pastorais.css");
+@import url("./pages/comunidades.css");
+@import url("./pages/comunidade-detalhe.css"); /* Mantido apenas uma vez, no local correto */
+@import url("./pages/pastoral-detalhe.css");
+@import url("./pages/acampamento.css");
